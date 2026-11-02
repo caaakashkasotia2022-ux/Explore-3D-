@@ -15,7 +15,7 @@ const MAX_MB = 10;
 const STAGES = [
   ['prepare', 'Preparing image'],
   ['upload', 'Uploading securely'],
-  ['analyze', 'AI vision analysis'],
+  ['analyze', 'Analysing image'],
   ['build', 'Building 3D model'],
 ];
 
@@ -122,7 +122,7 @@ export default function Upload() {
         clearInterval(tick);
       }
     } else if (stateless) {
-      update({ offline: true, offlineReason: 'AI analysis is not configured on this site, so this is an offline analysis.' });
+      update({ offline: true, offlineReason: 'Your image was analysed in your browser.' });
     }
 
     update({ stage: 'build', progress: 0.9, analysis });
@@ -189,13 +189,13 @@ export default function Upload() {
       <div className="page-head">
         <span className="eyebrow">Upload your image</span>
         <h1>Turn a photo into an <span className="grad-text">explorable model</span></h1>
-        <p>Upload a JPG, PNG or WEBP. AI vision identifies the objects and components, then you can explore an estimated 3D reconstruction — or jump to a detailed library model.</p>
+        <p>Upload a JPG, PNG or WEBP to get an image analysis and an estimated 3D reconstruction — or jump to a detailed library model.</p>
       </div>
 
       {health && !health.ai && (
         <div className="estimate-banner" style={{ maxWidth: 'none', marginBottom: 18 }} role="note">
           <Icon name="info" />
-          <span>{health.ok ? 'AI analysis is not configured on this server (no Claude API key). ' : 'The Explore3D server is offline. '}You can still upload: you’ll get an offline image analysis, an estimated relief model, and can pick a library model manually.</span>
+          <span>Images are analysed right here in your browser: you’ll get an image analysis, an estimated 3D relief model, and can open the closest detailed library model.</span>
         </div>
       )}
 
@@ -327,7 +327,7 @@ function Result({ job, model, onExplore, onReset, onSave }) {
 
       <div className="result-side">
         <div className="panel result-card">
-          <span className="eyebrow">{a ? 'AI analysis' : 'Offline analysis'}</span>
+          <span className="eyebrow">{a ? 'AI analysis' : 'Image analysis'}</span>
           <h2>{a?.title || 'Your image'}</h2>
           {a ? <p>{a.summary}</p> : <p className="muted">{job.offlineReason}</p>}
           {!a && job.stats && (
@@ -352,8 +352,8 @@ function Result({ job, model, onExplore, onReset, onSave }) {
             <div className="recon bad">
               <Icon name="alert" />
               <div>
-                <b>Limited analysis</b>
-                <p>Without AI vision we can’t identify objects or parts. You can still explore a brightness-based relief of the whole image, or choose a detailed library model below.</p>
+                <b>Basic analysis</b>
+                <p>Object recognition isn’t enabled on this site, so individual parts aren’t identified. You can still explore a 3D relief of the whole image, or choose a detailed library model below.</p>
               </div>
             </div>
           )}

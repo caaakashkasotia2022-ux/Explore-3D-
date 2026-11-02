@@ -13,6 +13,7 @@ export const useApp = create((set, get) => ({
   toasts: [],
   quality: read('e3d-quality', 'high'),
   accounts: true, // false when the backend has no user database (e.g. static/Vercel hosting)
+  ai: false, // true once the backend confirms Claude credentials are configured
 
   toggleTheme: () => {
     const theme = get().theme === 'dark' ? 'light' : 'dark';

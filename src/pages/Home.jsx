@@ -13,15 +13,15 @@ const STORY = [
   { t: 0, title: 'One engine. 44 parts.', text: 'A complete inline-four petrol engine, modelled component by component — from the oil pan to the ignition coils.' },
   { t: 0.25, title: 'Pull it apart', text: 'Scroll to explode it. Every part slides out along its assembly path so you can see how the engine is stacked together.' },
   { t: 0.5, title: 'See the hidden parts', text: 'Pistons, connecting rods, crankshaft, camshafts and valves — the moving heart of the engine, normally sealed inside the block.' },
-  { t: 0.75, title: 'Understand how it works', text: 'In the explorer, click any part for a plain-language explanation, switch to Advanced for engineering detail, or ask the AI tutor.' },
+  { t: 0.75, title: 'Understand how it works', text: 'In the explorer, click any part for a plain-language explanation, or switch to Advanced for engineering detail.' },
 ];
 
 const FEATURES = [
   ['explode', 'Animated exploded views', 'Components fly apart and re-assemble along their real assembly paths, at any amount you like.'],
-  ['sparkles', 'AI-powered explanations', 'What it is, where it is, how it works and what it connects to — in beginner or advanced language, plus an AI tutor for follow-up questions.'],
+  ['sparkles', 'Clear explanations', 'What it is, where it is, how it works and what it connects to — for every part, in beginner or advanced language.'],
   ['section', 'Cutaways & X-ray', 'Slice through any model on any axis, or fade everything except the part you are studying.'],
   ['play', 'Step-by-step animations', 'Guided tours show a heartbeat, a four-stroke cycle, a chain drive or how loads travel to a building’s foundations.'],
-  ['image', 'Your own images & models', 'Upload a photo for AI object and component detection with an estimated 3D reconstruction — or open your own GLB/OBJ.'],
+  ['image', 'Your own images & models', 'Upload a photo for an image analysis and an estimated 3D reconstruction — or open your own GLB/OBJ.'],
   ['keyboard', 'Mouse, touch & keyboard', 'Rotate, pan, zoom and explore with any input. Full-screen mode, labels and a searchable component list.'],
 ];
 
@@ -110,7 +110,7 @@ export default function Home() {
           <div className="drop-icon" style={{ margin: 0, flex: 'none' }}><Icon name="upload" size={28} /></div>
           <div className="cat-body" style={{ padding: 0 }}>
             <h3>Upload Your Image</h3>
-            <p>Photograph an engine, a bike, an appliance, a building or a diagram. AI identifies its objects and components and builds an explorable, estimated 3D model.</p>
+            <p>Photograph an engine, a bike, an appliance, a building or a diagram. Get an image analysis and an explorable, estimated 3D model built from it.</p>
           </div>
           <span className="btn btn-primary">Try it <Icon name="arrowR" /></span>
         </Link>
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
           <div className="cta-steps">
             <div><b>1</b> Upload a JPG, PNG or WEBP</div>
-            <div><b>2</b> AI detects objects & components</div>
+            <div><b>2</b> We analyse the image</div>
             <div><b>3</b> Explore the annotated analysis</div>
             <div><b>4</b> Open the estimated or library 3D model</div>
           </div>

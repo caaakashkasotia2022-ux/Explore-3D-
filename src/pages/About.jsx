@@ -22,8 +22,8 @@ export default function About() {
           <p>Each library model is built component-by-component, with real assembly-path explode vectors, working animations and hand-written explanations at two levels. They are accurate educational simplifications — not CAD-precise replicas or medical references.</p>
         </div>
         <div className="panel">
-          <h3>AI, honestly labelled</h3>
-          <p>Image analysis and the AI tutor are powered by Claude. A single photo cannot reveal hidden geometry, so image-based 3D models are always marked as <b>estimated reconstructions</b>, and the app falls back to an annotated 2D analysis or a matching library model when a reliable 3D model isn’t possible.</p>
+          <h3>Estimates, honestly labelled</h3>
+          <p>A single photo cannot reveal hidden geometry, so image-based 3D models are always marked as <b>estimated reconstructions</b>, and the app falls back to an annotated 2D analysis or a matching library model when a reliable 3D model isn’t possible.</p>
         </div>
         <div className="panel">
           <h3>Technology</h3>
@@ -35,7 +35,7 @@ export default function About() {
         </div>
         <div className="panel">
           <h3>Privacy</h3>
-          <p>Uploaded images are stored under random, unguessable file names and are only sent to the AI service for analysis. Accounts use salted scrypt password hashes. Projects saved without an account stay in your browser.</p>
+          <p>Uploaded images are stored under random, unguessable file names and, if AI analysis is enabled on the site, are only sent to the AI service for analysis. Accounts use salted scrypt password hashes. Projects saved without an account stay in your browser.</p>
         </div>
       </div>
       <div style={{ marginTop: 30, display: 'flex', gap: 12 }}>

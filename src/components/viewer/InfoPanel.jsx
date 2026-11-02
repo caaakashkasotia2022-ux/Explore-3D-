@@ -5,6 +5,7 @@ import MiniMarkdown from '../MiniMarkdown.jsx';
 import { useViewer } from '../../store/viewerStore.js';
 import { focusPart } from '../../lib/camera.js';
 import { api } from '../../lib/api.js';
+import { useApp } from '../../store/appStore.js';
 
 const SECTIONS = [
   ['what', 'What it is'],
@@ -67,6 +68,7 @@ function PartInfo({ part, model, level, setLevel, hidden }) {
   const sys = model.sysById[part.system];
   const info = part.info || {};
   const { select, toggleHidden } = useViewer.getState();
+  const aiEnabled = useApp((s) => s.ai);
   const body = useRef();
   useEffect(() => { body.current?.scrollTo({ top: 0 }); }, [part.id]);
 
@@ -135,7 +137,7 @@ function PartInfo({ part, model, level, setLevel, hidden }) {
             <p className="muted" style={{ fontSize: 13.5 }}>This part is animated — press <kbd>Space</kbd> or the play button, and change the speed in settings.</p>
           </div>
         )}
-        <AskAI part={part} model={model} level={level} />
+        {aiEnabled && <AskAI part={part} model={model} level={level} />}
       </div>
     </>
   );
